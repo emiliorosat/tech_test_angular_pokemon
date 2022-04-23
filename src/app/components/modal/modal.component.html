@@ -1,0 +1,27 @@
+<div>
+    <div class="w-100 d-flex justify-content-center mb-3">
+        <img src="/assets/images/pokebola.png" width="60px" alt="pokebola">
+    </div>
+    <form [formGroup]="Form">
+        <div class="form-group mb-2">
+            <label class="form-label" >Nombre pokemon</label>
+            <span id="name" title="pokemon name" class="form-control"   >
+                {{name}}
+            </span>
+        </div> 
+        <div class="form-group mb-2">
+            <label class="form-label" >Fecha favorito</label>
+            <span title="create at"  class="form-control"   >
+                {{ createAt| date}}
+            </span>
+        </div>
+        <div class="form-group mb-2">
+            <label for="alias" class="form-label" >Alias</label>
+            <input id="alias" name="alias" formControlName="alias" title="pokemon alias" placeholder="Alias" class="form-control"  >
+        </div>
+        <button (click)="onSubmit()" type="button" class="btn btn-dark mt-3 w-100" [disabled]="Form.invalid">Guardar</button>
+        <button (click)="onClose()" type="button" class="btn btn-warning mt-3 w-100" >Cerrar</button>
+        
+    </form>
+    
+</div>
